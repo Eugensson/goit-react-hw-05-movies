@@ -1,7 +1,14 @@
 import { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 import { getTrendingMovies } from '../services/api';
+import {
+  Container,
+  Title,
+  List,
+  ListItem,
+  LinkItem,
+} from 'components/Section.styled';
 
 const Home = () => {
   const [trending, setTrending] = useState([]);
@@ -11,18 +18,18 @@ const Home = () => {
   }, []);
 
   return (
-    <section>
-      <h2>Trending today</h2>
-      <ul>
+    <Container>
+      <Title>Trending today</Title>
+      <List>
         {trending.map(({ id, title }) => (
-          <li key={id}>
-            <Link to={`/movies/${id}`} state={{ from: location }}>
+          <ListItem key={id}>
+            <LinkItem to={`/movies/${id}`} state={{ from: location }}>
               {title}
-            </Link>
-          </li>
+            </LinkItem>
+          </ListItem>
         ))}
-      </ul>
-    </section>
+      </List>
+    </Container>
   );
 };
 

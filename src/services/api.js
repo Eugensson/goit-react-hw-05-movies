@@ -6,7 +6,7 @@ export const getTrendingMovies = async () => {
   return data.results;
 };
 
-export const searchMovieByQuery = async query => {
+export const searchMoviesByQuery = async query => {
   const response = await fetch(
     `https://api.themoviedb.org/3/search/movie?api_key=133c2d7094f741475ddc1c9cf006a400&query=${query}`
   );
