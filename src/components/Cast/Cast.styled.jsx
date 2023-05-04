@@ -13,7 +13,6 @@ export const CastTitle = styled.h2`
 export const CastList = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   gap: 20px;
 `;
 

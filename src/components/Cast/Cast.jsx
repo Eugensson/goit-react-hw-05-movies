@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { getMovieCredits } from '../../services/api';
+import noPhoto from './noPhoto.jpg';
 
 import {
   CastContainer,
@@ -28,11 +29,15 @@ const Cast = () => {
       <CastList>
         {movie.map(({ id, name, character, profile_path }) => (
           <CastListItem key={id}>
-            <img
-              src={`https://image.tmdb.org/t/p/w500${profile_path}`}
-              alt={name}
-              width="150"
-            />
+            {profile_path !== null ? (
+              <img
+                src={`https://image.tmdb.org/t/p/w500${profile_path}`}
+                alt={name}
+                width="150"
+              />
+            ) : (
+              <img src={noPhoto} alt="No photos" width="150" />
+            )}
             <CastDescription>
               <CastText>
                 <b>{name}</b>
