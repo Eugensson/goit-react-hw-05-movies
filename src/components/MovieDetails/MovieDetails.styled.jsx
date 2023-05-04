@@ -8,7 +8,10 @@ export const MovieDetailsContainer = styled.section`
   padding: 10px;
 `;
 
-export const LinkBtn = styled(NavLink)``;
+export const LinkBtn = styled(NavLink)`
+  font-size: 18px;
+  color: #00f;
+`;
 
 export const MovieReviewContainer = styled.div`
   display: flex;

@@ -5,7 +5,6 @@ export const Container = styled.section``;
 
 export const Title = styled.h2`
   font-size: 30px;
-
   margin: 10px 0;
 `;
 
@@ -58,7 +57,6 @@ export const List = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin: 0;
   padding: 20px;
 `;
 

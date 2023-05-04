@@ -8,6 +8,7 @@ import {
   CastTitle,
   CastList,
   CastListItem,
+  CastDescription,
   CastText,
 } from 'components/Cast/Cast.styled';
 
@@ -32,13 +33,15 @@ const Cast = () => {
               alt={name}
               width="150"
             />
-            <CastText>
-              <b>{name}</b>
-            </CastText>
-            <CastText>
-              Character:
-              <b>{character}</b>
-            </CastText>
+            <CastDescription>
+              <CastText>
+                <b>{name}</b>
+              </CastText>
+              <CastText>
+                Character:
+                <b>{character}</b>
+              </CastText>
+            </CastDescription>
           </CastListItem>
         ))}
       </CastList>
