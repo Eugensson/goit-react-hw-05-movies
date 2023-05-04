@@ -20,7 +20,7 @@ const MovieDetails = () => {
   const [movie, setMovie] = useState({});
   const { movieId } = useParams();
   const location = useLocation();
-  const prePage = useRef(location?.state?.from ?? '/');
+  const prePage = useRef(location?.state?.from ?? '/movies');
 
   useEffect(() => {
     searchMovieById(movieId)

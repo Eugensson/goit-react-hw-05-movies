@@ -13,6 +13,7 @@ import {
 const Home = () => {
   const [trending, setTrending] = useState([]);
   const location = useLocation();
+
   useEffect(() => {
     getTrendingMovies().then(setTrending);
   }, []);

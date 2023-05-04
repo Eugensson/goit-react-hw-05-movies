@@ -44,7 +44,7 @@ const Cast = () => {
               </CastText>
               <CastText>
                 Character:
-                <b>{character}</b>
+                <b> {character}</b>
               </CastText>
             </CastDescription>
           </CastListItem>
