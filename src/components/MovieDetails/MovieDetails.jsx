@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useParams, useLocation, Outlet } from 'react-router-dom';
 
 import { searchMovieById } from '../../services/api';
+import noPoster from './noPoster.jpg';
 
 import {
   MovieDetailsContainer,
@@ -33,11 +34,16 @@ const MovieDetails = () => {
       <LinkBtn to={prePage.current}>Go back</LinkBtn>
       {Object.keys(movie).length > 0 && (
         <MovieReviewContainer>
-          <img
-            src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-            alt={movie.title}
-            width="300"
-          />
+          {movie.poster_path !== null ? (
+            <img
+              src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+              alt={movie.title}
+              width="300"
+            />
+          ) : (
+            <img src={noPoster} alt="No poster" width="300" />
+          )}
+
           <MovieInfoContainer>
             <MovieTitle>{movie.title}</MovieTitle>
             <MovieText>User Score: {movie.vote_average.toFixed(0)}%</MovieText>
