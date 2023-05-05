@@ -27,6 +27,7 @@ const Movies = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
+    if (query === '') return;
     setSearchParams(query);
   };
 
