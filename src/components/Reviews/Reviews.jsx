@@ -25,7 +25,7 @@ const Reviews = () => {
   return (
     <ReviewsContainer>
       <ReviewsTitle>Reviews</ReviewsTitle>
-      {movie.length === 0 && <p>We don`t have any reviews for this movie</p>}
+      {movie.length === 0 && <p>We don`t have any reviews for this movie.</p>}
       <ReviewsList>
         {movie.map(({ id, author, content }) => {
           return (
