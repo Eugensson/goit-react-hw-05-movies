@@ -26,6 +26,9 @@ const Cast = () => {
   return (
     <CastContainer>
       <CastTitle>Cast</CastTitle>
+      {movie.length === 0 && (
+        <p>We don`t have any informations of cast for this movie</p>
+      )}
       <CastList>
         {movie.map(({ id, name, character, profile_path }) => (
           <CastListItem key={id}>
