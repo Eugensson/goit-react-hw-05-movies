@@ -22,7 +22,7 @@ const MovieDetails = () => {
   const [movie, setMovie] = useState({});
   const { movieId } = useParams();
   const location = useLocation();
-  const prePage = useRef(location?.state?.from ?? '/movies');
+  const backLinkLocationRef = useRef(location.state?.from ?? '/movies');
 
   useEffect(() => {
     searchMovieById(movieId)
@@ -32,7 +32,7 @@ const MovieDetails = () => {
 
   return (
     <MovieDetailsContainer>
-      <LinkBtn to={prePage.current}>Go back</LinkBtn>
+      <LinkBtn to={backLinkLocationRef.current}>Go back</LinkBtn>
       {Object.keys(movie).length > 0 && (
         <MovieReviewContainer>
           {movie.poster_path !== null ? (

@@ -54,7 +54,7 @@ const Movies = () => {
         <List>
           {searchResult.map(({ id, title }) => (
             <ListItem key={id}>
-              <LinkItem to={`/movies/${id}`} state={{ from: location }}>
+              <LinkItem to={`${id}`} state={{ from: location }}>
                 {title}
               </LinkItem>
             </ListItem>
