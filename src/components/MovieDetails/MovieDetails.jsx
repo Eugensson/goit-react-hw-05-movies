@@ -1,7 +1,8 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, Suspense } from 'react';
 import { useParams, useLocation, Outlet } from 'react-router-dom';
 
 import { searchMovieById } from '../../services/api';
+import Loader from 'components/Loader/Loader';
 import noPoster from './noPoster.jpg';
 
 import {
@@ -69,7 +70,9 @@ const MovieDetails = () => {
         </MovieReviewContainer>
       )}
 
-      <Outlet />
+      <Suspense fallback={<Loader />}>
+        <Outlet />
+      </Suspense>
     </MovieDetailsContainer>
   );
 };
